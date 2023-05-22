@@ -6,13 +6,13 @@ app.get('/', (req,res) => {
 })
 
 app.get('/stream', (req,res)=>{
-    res.setHeader('content-type','text/event-stream')
+    res.setHeader("Content-Type","text/event-stream")
     helper(res);
 })
 
 let i=0
 function helper(res){
-    res.write(`Sending Test data every second : ${i++} `)
+    res.write(`data : Sending Test data every second : ${i++} `)
     setTimeout(()=>helper(res),1000)
 }
 
